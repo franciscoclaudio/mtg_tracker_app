@@ -1,9 +1,9 @@
 const CACHE_NAME = 'frequencia-alunos-v1';
 const urlsToCache = [
-  '/mtg_tools/Deck_Tracker_V3.html',
-  '/mtg_tools/Deck_Tracker_V3.js',
-  '/mtg_tools/styles/Deck_Tracker_styles_dark.css',
-  '/mtg_tools/img/icon.png',
+  '/mtg_tracker_app/Deck_Tracker_V3.html',
+  '/mtg_tracker_app/Deck_Tracker_V3.js',
+  '/mtg_tracker_app/styles/Deck_Tracker_styles_dark.css',
+  '/mtg_tracker_app/img/icon.png',
   'https://cdn.tailwindcss.com'
 ];
 
@@ -57,7 +57,7 @@ self.addEventListener('fetch', (event) => {
           // Se a requisição for uma navegação (carregamento de página)
           if (event.request.mode === 'navigate') {
             // Tenta servir a página HTML principal cacheada
-            return caches.match('/mtg_tools/Deck_Tracker_V3.html');
+            return caches.match('/mtg_tracker_app/Deck_Tracker_V3.html');
           }
         });
       })
