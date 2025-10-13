@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎴 Ferramentas MTG - Suíte Completa v5.0</title>
+    <link rel="stylesheet" href="/mtg_tools/styles/Ferramentas_MTG_styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎴 Ferramentas MTG</h1>
+            <p>Suíte Completa de Ferramentas v5.0</p>
+            <p style="margin-top: 10px; font-size: 0.95em;">Conjunto profissional de ferramentas para jogadores competitivos de Magic: The Gathering, com foco em análise estatística, rastreamento de partidas e cálculos de probabilidade.</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="/mtg_tools/Ferramentas_MTG.html" class="active">🏠 Menu Principal</a></li>
+                <li><a href="/mtg_tools/Deck_Tracker_V3.html">📊 Deck Stats Tracker</a></li>
+                <li><a href="/mtg_tools/Calculadora_MTG.html">🧮 Calculadora de Probabilidade</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <!-- TABELA DE FERRAMENTAS -->
+            <section id="ferramentas">
+                <h2>📋 Ferramentas Disponíveis</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ferramenta</th>
+                            <th>Link de Acesso</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🏠 Menu Principal</td>
+                            <td><a href="/mtg_tools/Ferramentas_MTG.html">Ferramentas_MTG.html</a></td>
+                            <td>Página inicial com documentação e navegação</td>
+                        </tr>
+                        <tr>
+                            <td>📊 Deck Stats Tracker</td>
+                            <td><a href="/mtg_tools/Deck_Tracker_V3.html">Deck_Tracker_V3.html</a></td>
+                            <td>Sistema completo de rastreamento multi-usuário e multi-formato com sincronização Firebase</td>
+                        </tr>
+                        <tr>
+                            <td>🧮 Calculadora de Probabilidade</td>
+                            <td><a href="/mtg_tools/Calculadora_MTG.html">Calculadora_MTG.html</a></td>
+                            <td>Calculadora hipergeométrica para probabilidades de draw</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- SOBRE AS FERRAMENTAS -->
+            <section id="sobre">
+                <h2>📖 Sobre as Ferramentas</h2>
+                <p>As Ferramentas MTG são um conjunto de aplicações web projetadas para auxiliar jogadores de Magic: The Gathering em:</p>
+                <ul>
+                    <li>✅ <strong>Análise de Desempenho:</strong> Rastreie win rates por deck, matchup e games individuais</li>
+                    <li>✅ <strong>Decisões Informadas:</strong> Calcule probabilidades de draws para otimizar sequências</li>
+                    <li>✅ <strong>Sincronização Multi-Dispositivo:</strong> Acesse seus dados de qualquer lugar via Firebase</li>
+                    <li>✅ <strong>Suporte Multi-Formato:</strong> Modern, Pioneer, Legacy, Standard e Pauper</li>
+                </ul>
+            </section>
+
+            <!-- GUIA RÁPIDO: DECK STATS TRACKER -->
+            <section id="guia-tracker">
+                <h2>📊 Guia Rápido: Deck Stats Tracker v3.0</h2>
+                <p class="alert alert-info">A versão 3.0 representa uma reformulação completa do sistema de rastreamento com suporte multi-usuário, multi-formato e sincronização em nuvem.</p>
+
+                <h3>🔑 Passo 1: Login/Registro</h3>
+                <ol>
+                    <li>Acesse o <a href="/mtg_tools/Deck_Tracker_V3.html">Deck Stats Tracker</a></li>
+                    <li>Selecione seu nome no dropdown <strong>"Selecione o Usuário"</strong></li>
+                    <li>→ Ou clique em <strong>"--- Novo Usuário ---"</strong> para se registrar</li>
+                    <li>Aguarde o carregamento dos dados do Firebase</li>
+                </ol>
+
+                <h3>🎯 Passo 2: Configuração Inicial</h3>
+                <ol>
+                    <li>Selecione o <strong>FORMATO</strong> que deseja jogar (ex: Modern)</li>
+                    <li>Selecione seu <strong>DECK ATUAL</strong></li>
+                    <li>→ Use <strong>"--- Criar Novo Deck ---"</strong> se necessário</li>
+                    <li>Pronto! O sistema está configurado</li>
+                </ol>
+
+                <h3>⚔️ Passo 3: Registrar Partidas</h3>
+                <ol>
+                    <li>Selecione o deck do <strong>OPONENTE</strong>
+                        <ul>
+                            <li>→ Lista pré-carregada do metagame do formato</li>
+                            <li>→ Use <strong>"--- Nova Matchup (Manual) ---"</strong> para decks fora da lista</li>
+                        </ul>
+                    </li>
+                    <li>Registre os resultados:
+                        <ul>
+                            <li>Game 1: Vitória/Derrota</li>
+                            <li>Game 2: Vitória/Derrota</li>
+                            <li>Game 3: Não Jogou / Vitória / Derrota</li>
+                        </ul>
+                    </li>
+                    <li>Clique em <strong>"Registrar Partida"</strong></li>
+                    <li>✅ Dados salvos automaticamente no Firebase!</li>
+                </ol>
+
+                <h3>📈 Passo 4: Visualizar Estatísticas</h3>
+                <div class="feature-box">
+                    <h4>📊 Estatísticas Gerais:</h4>
+                    <p>Visão macro do desempenho do deck selecionado com win rates totais e por game.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>🎯 Estatísticas por Matchup:</h4>
+                    <p>Dropdown "Selecione um Matchup para ver as Stats" - Veja seu desempenho específico contra cada arquétipo e identifique seus melhores e piores matchups.</p>
+                </div>
+
+                <h3>💾 Importar/Exportar Dados</h3>
+                <h4>💾 Exportar:</h4>
+                <ul>
+                    <li>Clique em <strong>"Exportar Dados"</strong></li>
+                    <li>Baixa arquivo JSON com TODOS os seus dados (todos formatos e decks)</li>
+                </ul>
+                <h4>📥 Importar:</h4>
+                <ul>
+                    <li>Clique em <strong>"Importar Dados"</strong></li>
+                    <li>Selecione arquivo JSON</li>
+                    <li>Sistema migra automaticamente estruturas antigas</li>
+                    <li>Dados são ADICIONADOS aos existentes (não sobrescreve)</li>
+                </ul>
+            </section>
+
+            <!-- CALCULADORA DE PROBABILIDADE -->
+            <section id="guia-calculadora">
+                <h2>🧮 Guia Rápido: Calculadora de Probabilidade</h2>
+                <p>Calcula a probabilidade de você comprar um número específico de "outs" (cartas desejadas) em uma determinada quantidade de draws.</p>
+
+                <h3>🎯 Casos de Uso Comuns:</h3>
+                <ul>
+                    <li>✅ <strong>Abertura de Mão:</strong> "Qual a chance de ter pelo menos 1 Amulet of Vigor na mão inicial?"</li>
+                    <li>✅ <strong>Sequência de Jogo:</strong> "Até o turno 4, qual a chance de ter visto 2+ terrenos bounce?"</li>
+                    <li>✅ <strong>Sideboard:</strong> "Quantas cópias preciso para ter 80%+ de ver pelo menos 1?"</li>
+                </ul>
+
+                <h3>📝 Como Usar:</h3>
+                <ol>
+                    <li><strong>Cartas no deck:</strong> 60 (ou 99 para Commander)</li>
+                    <li><strong>Quantos draws:</strong> 7 (mão inicial) ou mais (com mulligans/draws)</li>
+                    <li><strong>Quantos Outs:</strong> Número de cópias no deck</li>
+                    <li><strong>Sucessos necessários:</strong> Quantos você PRECISA ver (mínimo)</li>
+                    <li>Clique em <strong>"Calcular"</strong></li>
+                </ol>
+            </section>
+
+            <!-- ESTRUTURA DO PROJETO -->
+            <section id="estrutura">
+                <h2>📁 Estrutura do Projeto</h2>
+                <pre><code>mtg_tools/
+│
+├── 📄 Ferramentas_MTG.html     # Menu principal de navegação
+├── 📄 Deck_Tracker_V3.html     # Tracker multi-usuário/formato
+├── 📄 Calculadora_mtg.html     # Calculadora hipergeométrica
+├── 📄 README.md                # Documentação
+│
+├── 📂 styles/                  # Arquivos CSS
+│   ├── Ferramentas_MTG_styles.css
+│   ├── Deck_Tracker_styles.css
+│   └── Calculadora_MTG_styles.css
+│
+└── 📂 img/                     # Imagens de fundo
+    ├── amulet_of_vigor.jpg
+    ├── tireless_tracker.jpg
+    ├── laboratory_manic.jpg
+    ├── solve_equation.jpg
+    ├── eureka.jpg
+    └── dissection_tools.jpg</code></pre>
+            </section>
+
+            <!-- COMO USAR -->
+            <section id="como-usar">
+                <h2>🚀 Como Usar</h2>
+                
+                <h3>💻 Online (Recomendado)</h3>
+                <p>Simplesmente acesse via GitHub Pages - não requer instalação!</p>
+                <a href="https://franciscoclaudio.github.io/mtg_tools/" class="btn btn-primary">🌐 Acessar Online</a>
+
+                <h3>📦 Local</h3>
+                <pre><code># Clone o repositório
+git clone https://github.com/franciscoclaudio/mtg_tools.git
+
+# Entre na pasta
+cd mtg_tools
+
+# Abra o arquivo principal no navegador
+# Windows
+start Ferramentas_MTG.html
+
+# macOS
+open Ferramentas_MTG.html
+
+# Linux
+xdg-open Ferramentas_MTG.html</code></pre>
+
+                <h3>🌐 Servidor Local (Opcional)</h3>
+                <pre><code># Python 3
+python -m http.server 8000
+
+# Acesse: http://localhost:8000/Ferramentas_MTG.html</code></pre>
+            </section>
+
+            <!-- TECNOLOGIAS -->
+            <section id="tecnologias">
+                <h2>🛠️ Tecnologias Utilizadas</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tecnologia</th>
+                            <th>Uso</th>
+                            <th>Versão</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HTML5</td>
+                            <td>Estrutura das páginas</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>CSS3</td>
+                            <td>Estilização e layout</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript (Vanilla)</td>
+                            <td>Lógica e interatividade</td>
+                            <td>ES6+</td>
+                        </tr>
+                        <tr>
+                            <td>Firebase Realtime Database</td>
+                            <td>Sincronização de dados</td>
+                            <td>9.6.1</td>
+                        </tr>
+                        <tr>
+                            <td>GitHub Pages</td>
+                            <td>Hospedagem estática</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>🎯 Por que essas tecnologias?</h3>
+                <ul>
+                    <li>✅ <strong>Sem frameworks:</strong> Carregamento rápido, sem dependências pesadas</li>
+                    <li>✅ <strong>Firebase:</strong> Sincronização em tempo real sem backend próprio</li>
+                    <li>✅ <strong>GitHub Pages:</strong> Hospedagem gratuita, confiável e com HTTPS</li>
+                    <li>✅ <strong>Vanilla JS:</strong> Máxima compatibilidade e performance</li>
+                </ul>
+            </section>
+
+            <!-- CONTRIBUINDO -->
+            <section id="contribuindo">
+                <h2>🤝 Como Contribuir</h2>
+                <p>Contribuições são bem-vindas! Siga estas etapas:</p>
+                <ol>
+                    <li>Faça um Fork do projeto</li>
+                    <li>Crie uma branch para sua feature (<code>git checkout -b feature/NovaFuncionalidade</code>)</li>
+                    <li>Commit suas mudanças (<code>git commit -m 'Adiciona nova funcionalidade X'</code>)</li>
+                    <li>Push para a branch (<code>git push origin feature/NovaFuncionalidade</code>)</li>
+                    <li>Abra um Pull Request</li>
+                </ol>
+            </section>
+
+            <!-- LICENÇA -->
+            <section id="licenca">
+                <h2>📜 Licença</h2>
+                <p>Este projeto está sob a licença MIT. Veja o arquivo <code>LICENSE</code> para mais detalhes.</p>
+            </section>
+
+            <!-- CONTATO -->
+            <section id="contato">
+                <h2>📧 Contato</h2>
+                <p><strong>Francisco Claudio</strong></p>
+                <p>GitHub: <a href="https://github.com/franciscoclaudio">@franciscoclaudio</a></p>
+            </section>
+
+            <!-- DISCLAIMER -->
+            <section id="disclaimer">
+                <h2>⚖️ Disclaimer</h2>
+                <p class="alert alert-warning">Este projeto não é afiliado, endossado ou patrocinado pela Wizards of the Coast LLC. Magic: The Gathering é uma marca registrada da Wizards of the Coast LLC.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>🎴 Ferramentas MTG v5.0 - Desenvolvido por <a href="https://github.com/franciscoclaudio">Francisco Claudio</a></p>
+            <p>&copy; 2024 - Licença MIT</p>
+        </footer>
+    </div>
+</body>
+</html>
