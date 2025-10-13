@@ -1,6 +1,7 @@
 const CACHE_NAME = 'frequencia-alunos-v1';
 const urlsToCache = [
   '/mtg_tools/Deck_Tracker_V3.html',
+  '/mtg_tools/Deck_Tracker_V3.js',
   '/mtg_tools/styles/Deck_Tracker_styles_dark.css',
   '/mtg_tools/img/icon.png',
   'https://cdn.tailwindcss.com'
