@@ -1,0 +1,184 @@
+/* ============================================ */
+/* CALCULADORA_MTG_STYLES.CSS - VERSÃO UNIFICADA COM FERRAMENTAS */
+/* ============================================ */
+
+/* Paleta Sóbria: Verde Escuro, Cinza, Vermelho, Branco Suave */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background-color: #1a1a1a !important;
+    color: #e8e8e8;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 750px;
+    margin: 40px auto;
+    background-color: #2b2b2b;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9);
+    border: 3px solid #1a4d2e;
+    padding: 30px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #0f2818 0%, #1a4d2e 100%);
+    color: #e8e8e8;
+    padding: 20px;
+    border-radius: 8px;
+    border-bottom: 3px solid #25633d;
+    box-shadow: 0 4px 12px rgba(26, 77, 46, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+header h2 {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #b8b8b8;
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* Forms, labels, inputs */
+form {
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 2px solid #4a4a4a;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #e8e8e8;
+}
+
+input[type="number"], input[type="text"], select, button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 2px solid #1a4d2e;
+    box-sizing: border-box;
+    background-color: #e8e8e8;
+    color: #1a1a1a;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+    transform: translateY(-2px);
+}
+
+button {
+    background: linear-gradient(135deg, #1a4d2e 0%, #25633d 100%);
+    color: #e8e8e8;
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid #0f2818;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #25633d 0%, #1a4d2e 100%);
+    box-shadow: 0 4px 12px rgba(26, 77, 46, 0.4);
+}
+
+button:disabled {
+    background-color: #4a4a4a;
+    cursor: not-allowed;
+    opacity: 0.6;
+    border-color: #6b6b6b;
+}
+
+h4 {
+    color: #4CAF50;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* Results box */
+#results {
+    border: 3px solid #1a4d2e;
+    padding: 30px;
+    font-size: 1.2em;
+    display: none;
+    font-weight: 500;
+    background: linear-gradient(135deg, #0f2818 0%, #1a4d2e 100%);
+    background-color: #2b2b2b;
+    color: #e8e8e8;
+    text-shadow: 0 0 5px #000, 0 0 5px #000;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#results h4 {
+    color: #4CAF50;
+    text-shadow: 1px 1px 3px #000;
+    margin-top: 0;
+}
+
+#results p strong {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+/* Status / Alerts */
+#status { 
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-weight: bold;
+    background-color: #2b2b2b;
+    border: 2px solid #4a4a4a;
+    font-size: 1.1em;
+}
+
+.loading { color: #b8b8b8; }
+.error { color: #d32f2f; }
+.success { color: #4CAF50; }
+
+@media (max-width: 768px) {
+    body { padding: 10px;}
+    .container { margin: 20px 15px; padding: 20px;}
+    header { padding: 15px;}
+    form { padding: 12px;}
+    h1 { font-size: 1.8em;}
+    h4, #results { font-size: 1em;}
+    input, select, button { font-size: 1em; padding: 10px;}
+}
+
+/* Utility classes from Ferramentas */
+.text-center { text-align: center; }
+.mt-20 { margin-top: 20px; }
+.mb-20 { margin-bottom: 20px; }
+.p-20 { padding: 20px; }
+
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: #1a1a1a; }
+::-webkit-scrollbar-thumb { background: #4a4a4a; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: #1a4d2e; }
