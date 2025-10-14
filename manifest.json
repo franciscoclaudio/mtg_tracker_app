@@ -9,12 +9,12 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/mtg_tracker_app/icon-192.png",
+      "src": "/mtg_tracker_app/img/icon.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/mtg_tracker_app/icon-512.png",
+      "src": "/mtg_tracker_app/img/icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
