@@ -1,4 +1,51 @@
-        // CONFIGURAÇÃO FIREBASE EMBUTIDA
+// ============================================
+// PWA INSTALL PROMPT
+// ============================================
+let deferredPrompt;
+const installPrompt = document.getElementById('installPrompt');
+const installBtn = document.getElementById('installBtn');
+const dismissBtn = document.getElementById('dismissInstall');
+
+// Registrar Service Worker
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/mtg_tracker_app/service-worker.js')
+            .then(reg => console.log('Service Worker registrado:', reg.scope))
+            .catch(err => console.error('Erro ao registrar Service Worker:', err));
+    });
+}
+
+// Capturar evento de instalação
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    // Mostrar o banner
+    installPrompt.classList.remove('hidden');
+});
+
+// Botão de instalar
+installBtn.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+    
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log(`Usuário ${outcome === 'accepted' ? 'aceitou' : 'recusou'} a instalação`);
+    
+    deferredPrompt = null;
+    installPrompt.classList.add('hidden');
+});
+
+// Botão de dispensar
+dismissBtn.addEventListener('click', () => {
+    installPrompt.classList.add('hidden');
+});
+
+// Esconder banner quando o app já está instalado
+window.addEventListener('appinstalled', () => {
+    installPrompt.classList.add('hidden');
+    console.log('PWA instalado com sucesso!');
+});
+// CONFIGURAÇÃO FIREBASE EMBUTIDA
         const firebaseConfig = {
             apiKey: "AIzaSyDXVYDMwvnUoCUMTlvh8egzqS06_o497y8",
             authDomain: "mtg-tracker-ea7a2.firebaseapp.com",
@@ -774,4 +821,5 @@
         document.addEventListener('DOMContentLoaded', () => {
             initializeFirebase(firebaseConfig);
             popularUserSelector();
+
         });
