@@ -15,15 +15,46 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-// Capturar evento de instalação
+// Detectar se é iOS/Safari
+function isIOS() {
+    return /iPhone|iPad|iPod/.test(navigator.userAgent) && !window.MSStream;
+}
+
+function isInStandaloneMode() {
+    return ('standalone' in window.navigator) && (window.navigator.standalone);
+}
+
+// Capturar evento de instalação (Chrome/Edge Android/Desktop)
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    // Mostrar o banner
-    installPrompt.classList.remove('hidden');
+    
+    // Verifica se já foi dispensado anteriormente
+    if (!localStorage.getItem('installPromptDismissed')) {
+        installPrompt.classList.remove('hidden');
+    }
 });
 
-// Botão de instalar
+// Para iOS: Mostrar instruções se não estiver instalado
+if (isIOS() && !isInStandaloneMode()) {
+    // Verifica se já foi dispensado
+    if (!localStorage.getItem('installPromptDismissed')) {
+        // Modifica o conteúdo para iOS
+        const installContent = installPrompt.querySelector('.install-content');
+        installContent.innerHTML = `
+            <p class="install-title">Instalar como App</p>
+            <p class="install-subtitle">Toque em <span style="font-size: 1.2em;">⎙</span> e depois "Adicionar à Tela Inicial"</p>
+        `;
+        
+        // Remove o botão "Instalar" no iOS (não funciona)
+        installBtn.style.display = 'none';
+        
+        // Mostra o prompt
+        installPrompt.classList.remove('hidden');
+    }
+}
+
+// Botão de instalar (apenas Android/Desktop)
 installBtn.addEventListener('click', async () => {
     if (!deferredPrompt) return;
     
@@ -33,16 +64,22 @@ installBtn.addEventListener('click', async () => {
     
     deferredPrompt = null;
     installPrompt.classList.add('hidden');
+    
+    if (outcome === 'dismissed') {
+        localStorage.setItem('installPromptDismissed', 'true');
+    }
 });
 
 // Botão de dispensar
 dismissBtn.addEventListener('click', () => {
     installPrompt.classList.add('hidden');
+    localStorage.setItem('installPromptDismissed', 'true');
 });
 
 // Esconder banner quando o app já está instalado
 window.addEventListener('appinstalled', () => {
     installPrompt.classList.add('hidden');
+    localStorage.removeItem('installPromptDismissed');
     console.log('PWA instalado com sucesso!');
 });
 // CONFIGURAÇÃO FIREBASE EMBUTIDA
@@ -823,3 +860,4 @@ window.addEventListener('appinstalled', () => {
             popularUserSelector();
 
         });
+
