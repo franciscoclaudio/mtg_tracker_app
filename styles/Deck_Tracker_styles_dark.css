@@ -271,7 +271,7 @@ legend {
 
 #installBtn {
     background-color: white;
-    color: #1a4d2e;
+    color: #494d4b;
     padding: 10px 20px;
     border-radius: 6px;
     font-weight: bold;
@@ -284,7 +284,7 @@ legend {
 }
 
 #installBtn:hover {
-    background-color: #e8e8e8;
+    background-color: #494d4b;
     transform: scale(1.05);
 }
 
