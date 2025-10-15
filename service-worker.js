@@ -1,4 +1,4 @@
-const CACHE_NAME = 'frequencia-alunos-v1';
+const CACHE_NAME = 'Deck_Tracker-v1';
 const urlsToCache = [
   '/mtg_tracker_app/Deck_Tracker_V3.html',
   '/mtg_tracker_app/Deck_Tracker_V3.js',
